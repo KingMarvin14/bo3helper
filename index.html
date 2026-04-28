@@ -1,14 +1,259 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="refresh" content="0; url=https://a269195b8c11bc.lhr.life">
-    <title>BO3 Guide Redirect</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EISENDRACHE // FULL GUIDE</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020406;
+            --accent-blue: #00d4ff;
+            --accent-gold: #ffcc00;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(0, 212, 255, 0.2);
+            --text: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; }
+
+        header {
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(to bottom, rgba(0,212,255,0.05), transparent);
+        }
+
+        .container { max-width: 900px; margin: 30px auto; padding: 20px; }
+
+        /* Akkordeon Styling */
+        .accordion-item {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .accordion-header:hover { background: rgba(0, 212, 255, 0.1); }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .accordion-content.active { max-height: 5000px; border-top: 1px solid var(--border); }
+
+        /* Unter-Kategorien */
+        .sub-item { margin: 10px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; }
+        .sub-header { padding: 15px; cursor: pointer; background: rgba(255, 255, 255, 0.03); font-weight: 600; display: flex; align-items: center; gap: 10px; }
+        .sub-header:hover { color: var(--accent-blue); background: rgba(255, 255, 255, 0.07); }
+        .sub-content { max-height: 0; overflow: hidden; transition: all 0.4s ease; background: rgba(0,0,0,0.2); }
+        .sub-content.active { max-height: 2000px; padding: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+
+        .highlight { color: var(--accent-blue); font-weight: bold; }
+        .gold { color: var(--accent-gold); }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        footer { text-align: center; padding: 40px; opacity: 0.4; font-size: 0.8rem; }
+    </style>
 </head>
-<body style="background:#111; color:#eee; font-family:sans-serif; text-align:center; padding-top:100px;">
-    <h1>Verbindung wird aufgebaut...</h1>
-    <p>Aktueller Tunnel: https://a269195b8c11bc.lhr.life</p>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<header>
+    <h1 style="letter-spacing: 10px; margin: 0; font-size: 2.5rem;">DER EISENDRACHE</h1>
+    <p style="color: var(--accent-gold); letter-spacing: 3px;">MASTER GUIDE // SOURCE: REDDIT DISCUSSION</p>
+</header>
+
+<div class="container">
+
+    <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleMain(this)">
+            <span><i class="fa-solid fa-bow-arrow"></i> Die 4 Elementar-Bögen</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+            
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-dragon"></i> Basis: Zorn der Alten</div>
+                <div class="sub-content">
+                    Füttere die 3 Drachenköpfe mit je 8-10 Seelen:<br>
+                    1. <span class="highlight">Hof:</span> Über der Tür zum Schloss.<br>
+                    2. <span class="highlight">Kirche:</span> Unter der Uhr am Ende des Gebäudes.<br>
+                    3. <span class="highlight">Untergrund:</span> Im Pyramidenraum.
+                </div>
+            </div>
+
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-bolt" style="color: #00d4ff;"></i> Blitzbogen (Storm)</div>
+                <div class="sub-content">
+                    <ul>
+                        <li>Schieße auf die Wetterfahne am Turm und nimm den Pfeil.</li>
+                        <li>Entzünde 3 Holzhaufen außerhalb der Map (beim Turm, im Tal, beim Raketenplatz).</li>
+                        <li>Aktiviere Anti-Grav und laufe über alle 5 Wind-Symbole (nicht den Boden berühren!).</li>
+                        <li>Fülle Seelen in 3 Urnen (Raketen-Tunnel, über Double-Tap, im Turm).</li>
+                        <li>Lade den Pfeil an den Urnen mit Blitzen auf und schieße erneut auf die 3 Holzhaufen.</li>
+                        <li>Bringe den Pfeil zur blauen Wolke am Turm und dann zum Altar im Untergrund.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-fire" style="color: #ff4444;"></i> Feuerbogen (Fire)</div>
+                <div class="sub-content">
+                    <ul>
+                        <li>Schieße auf das rote Symbol an der Turmwand (außen).</li>
+                        <li>Warte bei der Rakete auf einen Test, laufe danach raus und schieße auf den glühenden Stein am Fels.</li>
+                        <li>Triff 3 Kreise am Boden, während du aus den Wundersphären fliegst (Double-Tap, Death Ray, Turm).</li>
+                        <li>Sammle Kills in den Kreisen.</li>
+                        <li>Interagiere mit der Turm-Uhr, suche den passenden Kamin und schieße den Magma-Stein in 3 Versuchen dorthin.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-dog" style="color: #aaa;"></i> Wolfsbogen (Wolf)</div>
+                <div class="sub-content">
+                    <ul>
+                        <li>Aktiviere 4 Gemälde in Reihenfolge: <span class="highlight">Turm -> Raum unter Turm -> Kirche oben rechts -> Rittergang zur Power.</span></li>
+                        <li>Nimm den Schädel an der Raketenbasis und bringe ihn zum Altar.</li>
+                        <li>Folge dem Wolfsgeist und grabe 3 Stellen aus (Kills nötig).</li>
+                        <li>Wandlauf im Untergrund: Triff das Wolfs-Symbol an der Wand für die Plattform.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-skull" style="color: #a020f0;"></i> Voidbogen (Void)</div>
+                <div class="sub-content">
+                    <ul>
+                        <li>Schieße auf das lila Symbol im Gang über Double-Tap.</li>
+                        <li>Nahkampf-Kill über dem Quadrat im Raum unter dem Turm.</li>
+                        <li>Sammle 6 Schädel (Mule Kick, Double Tap, Fenster bei Kirche, Sams Zimmer, Spülbecken im Teleporter-Raum, Truck bei Rakete).</li>
+                        <li>Erzeuge 6 Crawler für die Schädel und sammle die 3 Symbole der Ritter (Namen merken!).</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <div class="accordion-header" onclick="toggleMain(this)">
+            <span><i class="fa-solid fa-star"></i> Main Easter Egg Guide</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="accordion-content">
+            
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-user"></i> Solo Anleitung</div>
+                <div class="sub-content">
+                    <p class="gold">Wichtiger Solo-Tipp: Du musst nur EINEN Bogen bauen.</p>
+                    <ol>
+                        <li>Schieße mit dem Bogen die Zacken am Teleporter gold.</li>
+                        <li><span class="highlight">Wisp-Jagd:</span> Schieße leuchtende Objekte ab (Telefon, Autos, Uhren, Globus).</li>
+                        <li><span class="highlight">Zeitreise 1:</span> Kanister & Sicherung holen, Safe-Code merken.</li>
+                        <li>Sicherung in Death Ray einlegen (Protect), Safe am Turm öffnen.</li>
+                        <li><span class="highlight">Simon Says:</span> Computer am Turm und bei der Rakete synchronisieren.</li>
+                        <li><span class="highlight">Bossfight Vorbereitung:</span> Ghost-Keeper mit Seelen füllen (nur dein Bogen zählt).</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-users"></i> Koop (2-4 Spieler) Anleitung</div>
+                <div class="sub-content">
+                    <p class="gold">Wichtiger Koop-Tipp: Alle 4 Bögen müssen fertig sein!</p>
+                    <ul>
+                        <li>Beim Keeper-Schritt (Seelen füllen) zeigt der Kreis eine Aura. Nur der Spieler mit dem passenden Bogen kann die Seelen füllen.</li>
+                        <li>Bossfight: Ragnarok DG-4 müssen nacheinander platziert werden, um Max Ammos effizient zu nutzen.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sub-item">
+                <div class="sub-header" onclick="toggleSub(this)"><i class="fa-solid fa-skull-crossbones" style="color: red;"></i> Der Bosskampf (Keeper)</div>
+                <div class="sub-content">
+                    <ul>
+                        <li><span class="highlight">Phase 1 & 3:</span> Überlebe, bis der Keeper in die Mitte schwebt. Wenn Blitze kommen -> <span class="gold">DG-4 unter ihn stellen</span> und hinter Säulen verstecken. Schieße auf die offene Brust.</li>
+                        <li><span class="highlight">Phase 2 & 4:</span> Panzer-Wellen. Nutze Haymaker oder Brecci.</li>
+                        <li><span class="highlight">Empfehlung:</span> "Near Death Experience" Gum für unendliche Revives im Solo.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>Marvin's DE-Wiki | Daten basierend auf Reddit Guide | 2026</p>
+</footer>
+
+<script>
+    function toggleMain(element) {
+        const content = element.nextElementSibling;
+        content.classList.toggle('active');
+        const icon = element.querySelector('.fa-chevron-down');
+        icon.style.transform = content.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    function toggleSub(element) {
+        const content = element.nextElementSibling;
+        content.classList.toggle('active');
+    }
+
+    // BG Animation
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    function init() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        particles = [];
+        for(let i = 0; i < 80; i++) {
+            particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, size: Math.random() * 2, speed: Math.random() * 0.4 + 0.1 });
+        }
+    }
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(0, 212, 255, 0.2)';
+        particles.forEach(p => {
+            ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
+            p.y -= p.speed; if(p.y < -10) p.y = canvas.height + 10;
+        });
+        requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', init);
+    init(); animate();
+</script>
+
 </body>
 </html>
